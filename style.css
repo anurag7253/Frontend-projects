@@ -1,108 +1,91 @@
-/* Resetting default browser styles */
+/* Basic reset and styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Basic styling for the body */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background: #f0f2f5;
-    color: #333;
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
+/* Styling the header */
 header {
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    background: #333;
     color: #fff;
-    padding: 20px;
+    padding: 10px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.2rem;
-    margin-bottom: 0;
-}
-
-main {
-    padding: 20px;
-}
-
-.project {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-
-.project h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.project p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.project ul {
-    margin-bottom: 10px;
-}
-
-.project ul li {
-    margin-bottom: 5px;
-}
-
-.project ol {
-    margin-bottom: 10px;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-}
-
-footer p {
     margin: 0;
 }
 
-/* Responsive Design */
+/* Styling the main section */
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Flex container for project cards */
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Spacing between cards */
+}
+
+/* Styling individual project cards */
+.project {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    /* 3 cards per row with gap */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    /* Ensure content doesn't overflow */
+}
+
+/* Card hover effect */
+.project:hover {
+    transform: scale(1.05);
+    /* Scale up card on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Enhance shadow on hover */
+}
+
+/* Styling for card titles */
+.project h3 {
+    margin-top: 0;
+}
+
+/* Styling lists within projects */
+.project ul,
+.project ol {
+    margin-left: 20px;
+}
+
+.project li {
+    margin-bottom: 10px;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
     .project {
-        padding: 15px;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    header p {
-        font-size: 1rem;
+        width: calc(50% - 20px);
+        /* 2 cards per row on smaller screens */
     }
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header p {
-        font-size: 0.9rem;
+    .project {
+        width: 100%;
+        /* 1 card per row on very small screens */
     }
 }
